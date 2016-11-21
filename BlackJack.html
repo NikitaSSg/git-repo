@@ -68,19 +68,18 @@ if ((scoreCard(Player)) < 21) {
 	//добор для игрока
 	Player.push('| ');
 	while (confirm('Ещё карту?')) {
+		Player.push(getCard());
 		if ((scoreCard(Player)) < 21) {
-			Player.push(getCard());
-			if ((scoreCard(Player)) < 21) {
-				outScore();
-			} else if ((scoreCard(Player)) == 21) {
-				alert('У вас 21!');
-				break;
-			} else {
-				alert('У вас перебор!');
-				outScore();
-				break;
-			}
-		}  
+			outScore();
+		} else if ((scoreCard(Player)) == 21) {
+			alert('У вас 21!');
+			break;
+		} else {
+			alert('У вас перебор!');
+			outScore();
+			break;
+		}
+		  
 	}
 } else if ((scoreCard(Player)) == 21) {
 	alert('У вас Black Jack!');
